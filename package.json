@@ -1,6 +1,6 @@
 {
   "name": "18s",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "license": "MIT",
   "type": "module",
   "description": "Chinese font subsetting packages for WebC (Web Components library for AI-assisted development) / WebC（面向 AI 辅助开发的 Web Components 组件库）中文字体分片包",
