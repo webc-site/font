@@ -26,13 +26,13 @@ WebC 是面向 AI 辅助开发的 Web Components 组件库。本包为 WebC 提�
 │   ├── lib/             # 分片处理、哈希寻址与 CSS 压缩模块
 │   ├── ttf/             # 原始字体文件及配置
 │   ├── gen.js           # 字体分片执行脚本
-│   ├── m.js             # 自定义多字重免切片字体处理脚本
+│   ├── m.js             # 数学字体处理脚本（无分片）
 │   └── gen.sh           # 依赖拉取与构建脚本
 ├── woff2/               # 编译分发目录，包含最终发布资源
 │   ├── *.woff2          # 内容寻址的 WOFF2 字体分片/整包
 │   ├── t.css            # 思源黑体字体映射表
 │   ├── c.css            # JetBrains Mono 字体映射表
-│   ├── m.css            # 自定义字体 m 的映射表
+│   ├── m.css            # 数学字体 m 的映射表
 │   └── _.css            # 合并所有字体的映射表（包含 t、c 与数学字体 m）
 ├── readme/              # 文档目录
 │   ├── en.md            # 英文文档
@@ -89,7 +89,7 @@ import '18s/t.css';
 // 引入 JetBrains Mono
 import '18s/c.css';
 
-// 引入自定义字体 m
+// 引入数学字体 m
 import '18s/m.css';
 ```
 
@@ -121,3 +121,7 @@ CJK 字体由于文件大（10MB 至 50MB），直接加载会导致白屏或字
 2014 年，Adobe 与 Google 推出 CJK 字体思源黑体（Source Han Sans），但体积问题依旧存在。随着分片技术（如 `cn-font-split`）出现，字体文件能按字符使用频率切分为数百个分片。浏览器按需下载分片，优化了中文字体加载体验。
 
 JetBrains Mono 是 2020 年发布的编程字体。`18s` 将思源黑体与 JetBrains Mono 作为可变字体整合分片，为 WebC 提供中文字体支持。
+
+### Latin Modern Math 数学字体
+
+**Latin Modern Math** 是一款 OpenType 格式的数学字体，旨在作为 Latin Modern 字体家族的现代伴侣，完成了对高德纳（Donald Knuth）经典 Computer Modern 字体的现代化重构。该字体包含了丰富的数学和技术符号，并支持高级 OpenType 数学排版特性（支持 `MATH` 表），广泛应用于 LaTeX 及其他现代排版系统中，以提供高质量、规范的数学公式渲染效果。
